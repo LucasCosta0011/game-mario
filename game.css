@@ -1,0 +1,146 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-image: url('drawable/background.webp');
+  background-repeat: no-repeat;
+}
+.game-board{
+  display: none;
+  background: linear-gradient(lightblue, white);
+  border: 1px solid #000;
+  max-width: 90%;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.score-board{
+  display: flex;
+  width: 90%;
+  background-color: gray;
+  margin: auto;
+  border-radius: 10px;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+  height: 50px;
+  align-items: center;
+}
+.score-counter{
+  position: absolute;
+  left: 0;
+  margin-left: 120px;
+}
+.record-counter{
+  position: absolute;
+  right: 0;
+  margin-right: 40px;
+}
+#h3-score{
+  position: absolute;
+  left: 0;
+  margin-left: 30px;
+}
+#h3-record{
+  position: absolute;
+  right: 0;
+  margin-right: 100px;
+}
+button{
+  width: 50px;
+  height: 35px;
+  background-color: darkred;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
+  color: white;
+}
+button:hover{
+  background-color: red;
+}
+
+/*//--Imagens--//*/
+.lawn{
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  bottom: 0;
+}
+
+.clouds{
+  position: absolute;
+  width: 300px;
+}
+
+.mario{
+  position: absolute;
+  width: 250px;
+  bottom: -60px;
+}
+
+.pipe{
+  position: absolute;
+  width: 70px;
+  bottom: 0;
+}
+/*//--Physicals--//*/
+
+.clouds-physical{
+  animation: clouds-physical 5s linear infinite;
+}
+
+.jump-mario{
+  animation: mario-jump 500ms;
+}
+
+.pipe-physical{
+  animation: pipe-physical 1s linear infinite;
+}
+
+/*//--Keyframes--//*/
+@keyframes clouds-physical{
+  from{
+    right: 0;
+  } 
+  to{
+    right: 100%;
+  }
+}
+@keyframes mario-jump {
+  0%{
+    bottom: -60px;
+  }
+  30%{
+    bottom: 40px;
+  }
+  40%{
+    bottom: 40px;
+  }
+  50%{
+    bottom: 40px;
+  }
+  60%{
+    bottom: 40px;
+  }
+  70%{
+    bottom: 40px;
+  }
+  100%{
+    bottom: -90px;
+  }
+}
+@keyframes pipe-physical{
+  from{
+    right: -150px;
+  }
+  to{
+    right: 100%;
+  }
+}
